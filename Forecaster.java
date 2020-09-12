@@ -113,7 +113,7 @@ public class Forecaster
       System.out.print("Enter windspeed: ");
       ws = scan.nextInt();
       System.out.print("Enter wind direction: ");
-      wd = scan.next().toUpperCase();
+      wd = scan.next();
       System.out.println();
       t.setTemp(temp);
       w.setTemperature(t);

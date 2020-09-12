@@ -1,7 +1,3 @@
-// Name : Jake Peterson
-// Class : CIST1400-005   Lab Section
-// Colleagues : None
-// Resources : None
 public class Weather
 {
    private Temperature temp;
@@ -14,7 +10,7 @@ public class Weather
       temp = new Temperature();
       humidity = 50;
       windspeed = 0;
-      windDirection = "W";
+      windDirection = "N";
       s = new Season();
    }
    public Weather(double t, char sc, String whichSeason)
@@ -76,21 +72,48 @@ public class Weather
          this.windspeed = sp;
       }
    }
+
+   //I replace the if statement with a switch --
+   //I think the bug was happening somewhere in the OR of the if statement
    public void setWindDir(String dir)
    {
       dir = dir.toUpperCase();
-      if (dir == "N" || dir == "E" || dir == "S" || dir == "W" || dir == "NE"
-         || dir == "SE" || dir == "SW" || dir == "NW")
-      {
-         this.windDirection = dir;
+      switch (dir){
+         case "N":
+            windDirection = "N";
+            break;
+         case "E":
+            windDirection = "E";
+            break;
+         case "S":
+            windDirection = "S";
+            break;
+         case "W":
+            windDirection = "W";
+            break;
+         case "NE":
+            windDirection = "NE";
+            break;
+         case "NW":
+            windDirection = "NW";
+            break;
+         case "SE":
+            windDirection = "SE";
+            break;
+         case "SW":
+            windDirection = "SW";
+            break;
+         default:
+            windDirection = "Unknown";
+            break;
       }
    }
    @Override
    public String toString()
    {
       String result = "";
-      result = String.format("The weather is currently " + getTemp() + " with " + getHumidity()
-         + "% humidity and a " + getWindSp() + " mph wind from the " + getWindDir()); 
+      result = "The weather is currently " + getTemp() + " with " + getHumidity()
+         + "% humidity and a " + getWindSp() + " mph wind from the " + getWindDir();
       return result; 
    }
    public boolean equals(Weather other)
