@@ -3,10 +3,33 @@
 // Colleagues : None
 // Resources : None
 import java.util.Scanner;
-public class Forecaster
-{
-   public static void main(String[] args)
-   {
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+
+public class Forecaster extends Application {
+   @Override
+   public void start(Stage primary) {
+
+
+      StackPane root = new StackPane();
+      Scene scene = new Scene(root, 500, 500);
+
+      primary.setTitle("Weather Forecaster");
+      primary.setScene(scene);
+      primary.show();
+   }
+
+   public static void main(String[] args) {
+      launch(args);
+   }
+
+}
+   /*
       int input;
       System.out.println("Welcome to the Weather Forecaster.");
       
@@ -113,7 +136,7 @@ public class Forecaster
       System.out.print("Enter windspeed: ");
       ws = scan.nextInt();
       System.out.print("Enter wind direction: ");
-      wd = scan.next().toUpperCase();
+      wd = scan.next();
       System.out.println();
       t.setTemp(temp);
       w.setTemperature(t);
@@ -253,7 +276,7 @@ public class Forecaster
 
 
 }   
-      
+     */
 
 
 
